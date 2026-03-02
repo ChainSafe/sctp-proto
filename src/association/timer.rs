@@ -43,7 +43,7 @@ impl TimerTable {
                 MAX_INIT_RETRANS, //T1Cookie
                 NO_MAX_RETRANS,   //T2Shutdown
                 NO_MAX_RETRANS,   //T3RTX
-                NO_MAX_RETRANS,   //Reconfig
+                MAX_INIT_RETRANS, //Reconfig
                 NO_MAX_RETRANS,   //Ack
             ],
             ..Default::default()
