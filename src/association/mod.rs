@@ -678,7 +678,11 @@ impl Association {
     /// stream returns a stream
     pub fn stream(&mut self, stream_identifier: StreamId) -> Result<Stream<'_>> {
         if !self.streams.contains_key(&stream_identifier) {
-            Err(Error::ErrStreamNotExisted)
+            if self.has_pending_reset_for_stream(stream_identifier) {
+                Err(Error::ErrStreamResetPending)
+            } else {
+                Err(Error::ErrStreamNotExisted)
+            }
         } else {
             Ok(Stream {
                 stream_identifier,
