@@ -15,7 +15,7 @@ rust-version = "1.76.0"
 
 [dependencies]
 bytes = "1.5.0"
-rand = "0.9.1"
+rand = "0.9.3"
 rustc-hash = "2.1.1"
 slab = "0.4.9"
 thiserror = "2.0.18"
